@@ -1,6 +1,6 @@
 "use strict";
-import {euglena_template} from "../node_modules/euglena/euglena_template/src/euglena_template";
-import {euglena} from "../node_modules/euglena/euglena/src/euglena";
+import {euglena_template} from "euglena.template";
+import {euglena} from "euglena";
 import Particle = euglena.being.Particle;
 
 export class Organelle extends euglena_template.being.alive.organelles.TimeOrganelle {
@@ -42,7 +42,7 @@ export class Organelle extends euglena_template.being.alive.organelles.TimeOrgan
                             }
                         }
                     }
-                    this.send(new euglena_template.being.alive.particles.Time(this.time,"this"));
+                    this.send(new euglena_template.being.alive.particles.Time(this.time,"this"),response);
                 }, 1000);
                 break;
         }
