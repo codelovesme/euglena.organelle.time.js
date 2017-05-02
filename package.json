@@ -2,14 +2,19 @@
   "name": "euglena.organelle.time.js",
   "version": "0.0.1",
   "description": "",
-  "main": "src/euglena.organelle.time.js.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "codelovesme",
   "license": "GPL v2",
   "dependencies": {
-    "euglena":"https://github.com/codelovesme/euglena.git#develop",
-    "euglena.template": "https://github.com/codelovesme/euglena.template.git"
+    "@euglena/core": "codelovesme/euglena#develop",
+    "@euglena/template": "codelovesme/euglena.template"
+  },
+  "devDependencies": {
+    "@types/chai": "^3.5.2",
+    "@types/mocha": "^2.2.41",
+    "chai": "^3.5.0"
   }
 }
