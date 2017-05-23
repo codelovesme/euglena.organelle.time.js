@@ -1,16 +1,17 @@
 {
-  "name": "euglena.organelle.time.js",
+  "name": "@euglena/organelle.time.js",
   "version": "0.0.2",
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "author": "codelovesme",
   "license": "GPL v2",
   "dependencies": {
-    "@euglena/core": "codelovesme/euglena#develop",
-    "@euglena/template": "codelovesme/euglena.template"
+    "cessnalib": "^0.2.0",
+    "@euglena/core": "0.1.6",
+    "@euglena/template": "1.0.1"
   },
   "devDependencies": {
     "@types/chai": "^3.5.2",

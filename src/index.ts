@@ -1,21 +1,22 @@
 "use strict"
-import { euglena_template } from "@euglena/template";
-import { euglena } from "@euglena/core";
-import Particle = euglena.being.Particle;
-import particles = euglena_template.being.alive.particle;
-import constants = euglena_template.being.alive.constants;
+import * as euglena_template from "@euglena/template";
+import * as euglena from "@euglena/core";
+import { sys, js } from "cessnalib";
+import Particle = euglena.ParticleV1;
+import particles = euglena_template.alive.particle;
+import constants = euglena_template.alive.constants;
 
-export class Organelle extends euglena_template.being.alive.organelle.TimeOrganelle {
-    private time: euglena.sys.type.Time;
+export class Organelle extends euglena_template.alive.organelle.TimeOrganelle {
+    private time: sys.type.Time;
     constructor() {
-        super(euglena_template.being.alive.constants.organelles.TimeOrganelle);
-        this.time = euglena.sys.type.StaticTools.Time.now();
+        super();
+        this.time = sys.type.StaticTools.Time.now();
     }
 
-    private sapContent: euglena_template.being.alive.particle.NetOrganelleSapContent;
+    private sapContent: euglena_template.alive.particle.NetOrganelleSapContent;
 
     protected bindActions(addAction: (particleName: string, action: (particle: Particle, callback: (particle: Particle) => void) => void) => void): void {
-        addAction(euglena_template.being.alive.constants.particles.TimeOrganelleSap, (particle) => {
+        addAction(euglena_template.alive.constants.particles.TimeOrganelleSap, (particle) => {
             this.sapContent = particle.data;
             let this_ = this;
             setInterval(() => {
@@ -46,7 +47,7 @@ export class Organelle extends euglena_template.being.alive.organelle.TimeOrgane
                         }
                     }
                 }
-                this_.send(new euglena_template.being.alive.particle.Time(this.time, this.sapContent.euglenaName), this_.name);
+                this_.send(new euglena_template.alive.particle.Time(this.time, this.sapContent.euglenaName), this_.name);
             }, 1000);
         });
         addAction(constants.particles.SetTime, (particle) => {

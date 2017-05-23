@@ -1,15 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const template_1 = require("@euglena/template");
-const core_1 = require("@euglena/core");
-var constants = template_1.euglena_template.being.alive.constants;
-class Organelle extends template_1.euglena_template.being.alive.organelle.TimeOrganelle {
+const euglena_template = require("@euglena/template");
+const cessnalib_1 = require("cessnalib");
+var constants = euglena_template.alive.constants;
+class Organelle extends euglena_template.alive.organelle.TimeOrganelle {
     constructor() {
-        super(template_1.euglena_template.being.alive.constants.organelles.TimeOrganelle);
-        this.time = core_1.euglena.sys.type.StaticTools.Time.now();
+        super();
+        this.time = cessnalib_1.sys.type.StaticTools.Time.now();
     }
     bindActions(addAction) {
-        addAction(template_1.euglena_template.being.alive.constants.particles.TimeOrganelleSap, (particle) => {
+        addAction(euglena_template.alive.constants.particles.TimeOrganelleSap, (particle) => {
             this.sapContent = particle.data;
             let this_ = this;
             setInterval(() => {
@@ -40,7 +40,7 @@ class Organelle extends template_1.euglena_template.being.alive.organelle.TimeOr
                         }
                     }
                 }
-                this_.send(new template_1.euglena_template.being.alive.particle.Time(this.time, this.sapContent.euglenaName), this_.name);
+                this_.send(new euglena_template.alive.particle.Time(this.time, this.sapContent.euglenaName), this_.name);
             }, 1000);
         });
         addAction(constants.particles.SetTime, (particle) => {

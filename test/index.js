@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * Created by codelovesme on 6/19/2015.
  */
 const index_1 = require("../src/index");
-const template_1 = require("@euglena/template");
+const euglena_template = require("@euglena/template");
 describe("euglena", () => {
     describe("js", () => {
         describe("Class", () => {
@@ -14,7 +14,7 @@ describe("euglena", () => {
                     let organelle = new index_1.Organelle();
                     let sap = { euglenaName: "" };
                     //when
-                    organelle.receive(new template_1.euglena_template.being.alive.particle.TimeOrganelleSap(sap, ""));
+                    organelle.receive(new euglena_template.alive.particle.TimeOrganelleSap(sap, ""));
                     //then
                     //TODO
                 });

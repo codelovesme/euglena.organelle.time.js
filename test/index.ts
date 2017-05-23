@@ -2,7 +2,7 @@
  * Created by codelovesme on 6/19/2015.
  */
 import { Organelle } from "../src/index";
-import {euglena_template} from "@euglena/template";
+import * as euglena_template from "@euglena/template";
 import * as chai from "chai";
 
 describe("euglena", () => {
@@ -14,7 +14,7 @@ describe("euglena", () => {
                     let organelle = new Organelle();
                     let sap = {euglenaName:""};
                     //when
-                    organelle.receive(new euglena_template.being.alive.particle.TimeOrganelleSap(sap,""));
+                    organelle.receive(new euglena_template.alive.particle.TimeOrganelleSap(sap,""));
                     //then
                     //TODO
                 });
